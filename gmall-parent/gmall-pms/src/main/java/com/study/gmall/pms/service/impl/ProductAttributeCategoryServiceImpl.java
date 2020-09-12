@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.study.gmall.pms.entity.ProductAttributeCategory;
 import com.study.gmall.pms.mapper.ProductAttributeCategoryMapper;
 import com.study.gmall.pms.service.ProductAttributeCategoryService;
+import com.study.gmall.vo.PageInfoVo;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +18,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductAttributeCategoryServiceImpl extends ServiceImpl<ProductAttributeCategoryMapper, ProductAttributeCategory> implements ProductAttributeCategoryService {
 
+    @Override
+    public PageInfoVo roductAttributeCategoryPageInfo(Integer pageNum, Integer pageSize) {
+        return null;
+    }
 }

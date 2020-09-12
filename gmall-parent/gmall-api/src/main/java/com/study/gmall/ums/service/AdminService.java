@@ -12,5 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-08-27
  */
 public interface AdminService extends IService<Admin> {
+    Admin login(String username, String password);
 
+    Admin getUserInfo(String userName);
 }

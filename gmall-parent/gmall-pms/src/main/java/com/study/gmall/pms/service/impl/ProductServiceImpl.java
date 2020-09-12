@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.study.gmall.pms.entity.Product;
 import com.study.gmall.pms.mapper.ProductMapper;
 import com.study.gmall.pms.service.ProductService;
+import com.study.gmall.vo.PageInfoVo;
+import com.study.gmall.vo.product.PmsProductParam;
+import com.study.gmall.vo.product.PmsProductQueryParam;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +20,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> implements ProductService {
 
+    @Override
+    public PageInfoVo productPageInfo(PmsProductQueryParam productQueryParam) {
+        return null;
+    }
+
+    @Override
+    public void saveProduct(PmsProductParam productParam) {
+
+    }
 }

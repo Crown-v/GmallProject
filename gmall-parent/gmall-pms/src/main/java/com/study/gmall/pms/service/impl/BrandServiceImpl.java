@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.study.gmall.pms.entity.Brand;
 import com.study.gmall.pms.mapper.BrandMapper;
 import com.study.gmall.pms.service.BrandService;
+import com.study.gmall.vo.PageInfoVo;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,4 +20,8 @@ import org.springframework.stereotype.Component;
 @Component //这个是注册到spring容器中的bean，不使用@Service，跟dubbo的@Service不好区分
 public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements BrandService {
 
+    @Override
+    public PageInfoVo brandPageInfo(String keyword, Integer pageNum, Integer pageSize) {
+        return null;
+    }
 }
