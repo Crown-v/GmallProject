@@ -25,9 +25,11 @@
     </appender>
 
     <!--日志级别   DEBUG-INFO-WARN-ERROR  -->
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
         <appender-ref ref="LOGSTASH"/>
     </root>
+
+    <logger name="com.study.gmall" level="DEBUG"></logger>
 </configuration>

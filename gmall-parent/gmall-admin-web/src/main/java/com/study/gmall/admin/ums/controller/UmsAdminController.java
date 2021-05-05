@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -69,7 +71,7 @@ public class UmsAdminController {
      */
     @ApiOperation(value = "用户注册")
     @PostMapping(value = "/register")
-    public Object register(@Valid @RequestBody UmsAdminParam umsAdminParam, BindingResult result) {
+    public Object register(@RequestBody @Valid UmsAdminParam umsAdminParam, BindingResult result) {
         Admin admin = null;
 
         //TODO 完成注册功能
@@ -85,8 +87,11 @@ public class UmsAdminController {
 //
 //            return new CommonResult().validateFailed(result);
 //        }else {
-//
+//            TODO 完成注册功能
 //        }
+        int errorCount = result.getErrorCount();
+        List<ObjectError> list = result.getAllErrors();
+        log.debug("校验错误个数：{}", errorCount);
         log.debug("需要注册的用户详情：{}",umsAdminParam);
         int i = 10/0;
         return new CommonResult().success(admin);

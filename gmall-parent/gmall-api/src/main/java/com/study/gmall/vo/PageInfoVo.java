@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor // 全参构造器
+@NoArgsConstructor // 无惨构造器
 @ApiModel
-@Data
+@Data // get/set方法
 public class PageInfoVo implements Serializable {
 
     @ApiModelProperty("总记录数")

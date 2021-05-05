@@ -1,12 +1,13 @@
 package com.study.gmall.ums.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.study.gmall.ums.entity.Admin;
 import com.study.gmall.ums.mapper.AdminMapper;
 import com.study.gmall.ums.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
 
 import javax.annotation.Resource;
@@ -19,6 +20,7 @@ import javax.annotation.Resource;
  * @author WJM
  * @since 2020-08-27
  */
+@Component
 @Service
 public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements AdminService {
 
@@ -37,8 +39,15 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         return admin;
     }
 
+    /**
+     * 获取用户详情
+     *
+     * @param userName 用户名
+     * @return Admin
+     */
     @Override
     public Admin getUserInfo(String userName) {
-        return null;
+        QueryWrapper<Admin> wrapper = new QueryWrapper<Admin>().eq("username", userName);
+        return adminMapper.selectOne(wrapper);
     }
 }
